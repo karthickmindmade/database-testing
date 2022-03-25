@@ -1,21 +1,17 @@
 const mongoose = require("mongoose");
 
 const UserSchema = new mongoose.Schema({
-   
     PhoneNumber: {
         type: Number,
-        required: [true, "PhoneNumber required"]
     },
     UserName:{
         type:String,
-        required: [true, "UserName required"]
     },
     Address:{
         type:String,
-        required: [true, "Address required"]
     }
 });
 
+const collectionName = 'users';
 
-
-module.exports = UserSchema;
+module.exports = mongoose.model('users',UserSchema,collectionName);
